@@ -10,6 +10,7 @@ const heroProps = {
 
 const mainProps = {
   title: "Managed agency selection",
+  description: "Stenghthen your onboarding process",
 };
 
 export default function Home() {
