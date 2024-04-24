@@ -14,7 +14,7 @@ export const StyledGetStartedBtn = styled((props) => <Button {...props} variant=
 export const StyledTitle = styled((props) => <SectionBigHeading {...props} />)`
   margin: 0;
   color: black;
-  line-height: ${(props) => props.lineHeight || "1.5rem"};
+  line-height: ${(props) => props.lineHeight || " 3.94rem"};
 `;
 
 export const StyledDescription = styled((props) => <SectionSubheading {...props} />)`

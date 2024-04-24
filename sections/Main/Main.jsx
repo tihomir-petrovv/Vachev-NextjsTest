@@ -1,7 +1,6 @@
 import Image from "next/image";
 import {
   StyledContainerColumn,
-  
 } from "./elements";
 import { StyledDescription, StyledTitle } from "../Hero/elements";
 import { Card } from "../../collections/Card/Card";

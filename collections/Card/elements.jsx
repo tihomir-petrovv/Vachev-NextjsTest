@@ -1,20 +1,22 @@
 import styled from "styled-components";
 import {
-  Button,
-  SectionBigHeading,
   SectionSubheading,
-  SectionContainer,
   SectionContainerColumn,
   SectionMediumHeading,
 } from "~/components";
 
-export const StyledContainerColumn = styled(({ height, ...props }) => (
+export const StyledCardContainerColumn = styled(({ height, ...props }) => (
   <SectionContainerColumn {...props} />
 ))`
-  align-items: center;
+  align-items: ${(props) => props.alignItems || "center"};
   height: ${(props) => props.height};
   min-height: ${(props) => props.minHeight};
   margin-top: ${(props) => props.marginTop};
+  justify-content: ${(props) => props.justifyContent || "center"};
+  flex-wrap: wrap;
+  flex-direction: ${(props) => props.flexDirection || "column"};
+  width: ${(props) => props.width || "100%"};
+  gap: ${(props) => props.gap || ""};
 `;
 
 export const StyledCardTitle = styled((props) => (
@@ -47,13 +49,15 @@ export const StyledCardImageContainer = styled(({ ...props }) => (
 `;
 
 export const StyledCardOptionBox = styled(({ ...props }) => <div {...props} />)`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 25rem;
-  height: 100%;
-  padding: 1rem;
+  display: ${(props) => props.display || "flex"};
+  flex-direction: ${(props) => props.flexDirection || "column"};
+  gap: ${(props) => props.gap || "1rem"};
+  align-items: ${(props) => props.alignItems || "center"};
+  justify-content: ${(props) => props.justifyContent || "center"};
+  width: ${(props) => props.width || "100%"};
+  max-width: ${(props) => props.maxWidth || "25rem"};
+  height: ${(props) => props.height || "fit-content"};
+  padding: ${(props) => props.padding || "1rem"};
+  background-color: ${(props) => props.backgroundColor || "white"};
+  border-radius: ${(props) => props.borderRadius || "15px"};
 `;
