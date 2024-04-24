@@ -1,31 +1,25 @@
 import styled from "styled-components";
 import {
-  Button,
   SectionBigHeading,
   SectionSubheading,
-  SectionContainer,
-  SectionContainerColumn
+  SectionContainerColumn,
+  SectionMediumHeading,
 } from "~/components";
-
-export const StyledContainer = styled(({ height, ...props }) => (
-  <SectionContainer {...props} />
-))`
-  align-items: center;
-`;
 
 export const StyledContainerColumn = styled(({ height, ...props }) => (
   <SectionContainerColumn {...props} />
 ))`
   align-items: center;
+  height: ${(props) => props.height};
+  min-height: ${(props) => props.minHeight};
+  margin-top: ${(props) => props.marginTop};
 `;
 
-export const StyledTitle = styled((props) => <SectionBigHeading {...props} />)`
+export const StyledSecondTitle = styled((props) => <SectionMediumHeading {...props} />)`
   margin: 0;
   color: black;
-`;
-
-export const StyledDescription = styled((props) => (
-  <SectionSubheading {...props} />
-))`
-  margin: 1.563rem 0 0;
+  text-align: left;
+  align-self: start;
+  line-height: 0.5rem;
+  font-size: 1.2rem;
 `;

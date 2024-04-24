@@ -11,6 +11,12 @@ const heroProps = {
 const mainProps = {
   title: "Managed agency selection",
   description: "Stenghthen your onboarding process",
+  image: { src: "/img/video.png", alt: "video", width: 1000, height: 1680 },
+  quotes: [
+    { title: "Brief", desc: "Complete brief writing or simple guidance on what to include, we've got you covered." },
+    { title: "Search", desc: "In-depth agency search covering, criteria matching, door knocking and due-diligence vetting." },
+    { title: "Pitch", desc: "Comprehensive pitch management, including comms, diary management and pitch hosting." },
+  ],
 };
 
 export default function Home() {

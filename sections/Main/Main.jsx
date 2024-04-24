@@ -1,13 +1,19 @@
 import Image from "next/image";
-import { StyledContainer, StyledContainerColumn, StyledDescription, StyledTitle } from "./elements";
+import {
+  StyledContainerColumn,
+  
+} from "./elements";
+import { StyledDescription, StyledTitle } from "../Hero/elements";
+import { Card } from "../../collections/Card/Card";
 
-export const Main = ({ title, description }) => {
+export const Main = ({ title, description, image, quotes }) => {
   return (
-    <StyledContainer>
+    <StyledContainerColumn height={"fit-content"} minHeight={"100vh"} marginTop={"5vh"}>
       <StyledContainerColumn>
-        <StyledTitle>{title}</StyledTitle>
+        <StyledTitle lineHeight={"1rem"}>{title}</StyledTitle>
         <StyledDescription>{description}</StyledDescription>
       </StyledContainerColumn>
-    </StyledContainer>
+      <Card image={image} quotes={quotes}/>
+    </StyledContainerColumn>
   );
 };
