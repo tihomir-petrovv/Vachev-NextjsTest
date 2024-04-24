@@ -1,13 +1,28 @@
+import React from "react";
 import styled from "styled-components";
 import {
   SectionSubheading,
   SectionContainerColumn,
   SectionMediumHeading,
-} from "~/components";
+} from "../../components";
 
-export const StyledMainCardContainerColumn = styled(({ height, ...props }) => (
+interface StyledMainCardContainerColumn {
+  height?: string;
+  props?: string;
+}
+
+interface StyledCardContainerColumn {
+  children: React.ReactNode;
+  onClick?: () => void;
+  index: number;
+  selectedBoxIndex?: number | null;
+  height?: string;
+  props?: string;
+}
+
+export const StyledMainCardContainerColumn = styled(({ height, ...props }: StyledMainCardContainerColumn) => (
   <SectionContainerColumn {...props} />
-))`
+))<StyledMainCardContainerColumn>`
   justify-content: center;
   flex-direction: row;
   gap: 2rem;
@@ -15,10 +30,10 @@ export const StyledMainCardContainerColumn = styled(({ height, ...props }) => (
   flex-wrap: wrap;
 `;
 export const StyledCardContainerColumn = styled(
-  ({ selectedBoxIndex, index, height, ...props }) => (
+  ({ selectedBoxIndex, index, height, ...props }: StyledCardContainerColumn) => (
     <SectionContainerColumn {...props} />
   )
-)`
+)<StyledCardContainerColumn>`
   display: flex;
   flex-direction: row;
   align-items: center;
