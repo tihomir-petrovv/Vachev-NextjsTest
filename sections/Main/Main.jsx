@@ -1,5 +1,5 @@
-import { StyledContainerColumn } from "./elements";
-import { StyledDescription, StyledTitle } from "../Hero/elements";
+import { StyledContainerColumn, StyledRootContainerColumn, StyledTitle } from "./elements";
+import { StyledDescription } from "../Hero/elements";
 import { Card } from "../../collections/Card/Card";
 
 export const Main = ({
@@ -12,26 +12,18 @@ export const Main = ({
   pitchImage,
 }) => {
   return (
-    <StyledContainerColumn
-      style={{
-        height: "fit-content",
-        minHeight: "100vh",
-        marginTop: "5vh",
-      }}
-    >
+    <StyledRootContainerColumn>
       <StyledContainerColumn>
-        <StyledTitle style={{
-          lineHeight: "1rem",
-        }}>{title}</StyledTitle>
+        <StyledTitle>{title}</StyledTitle>
         <StyledDescription>{description}</StyledDescription>
       </StyledContainerColumn>
       <Card
-        image = {image}
-        quotes = {quotes}
-        briefImage = {briefImage}
-        searchImage = {searchImage}
-        pitchImage = {pitchImage}
+        image={image}
+        quotes={quotes}
+        briefImage={briefImage}
+        searchImage={searchImage}
+        pitchImage={pitchImage}
       />
-    </StyledContainerColumn>
+    </StyledRootContainerColumn>
   );
 };

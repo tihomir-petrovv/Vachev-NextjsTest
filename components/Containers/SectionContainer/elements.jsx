@@ -15,7 +15,7 @@ export const StyledSectionContainer = styled(
 `;
 
 export const StyledSectionContainerColumn = styled(
-  ({ topMargin = 0, bottomMargin = 0, ...props }) => <div {...props} />
+  ({ ...props }) => <div {...props} />
 )`
   display: flex;
   flex-direction: column;
@@ -24,6 +24,4 @@ export const StyledSectionContainerColumn = styled(
   height: fit-content;
   margin-left: auto;
   margin-right: auto;
-  margin-top: ${({ topMargin }) => topMargin}rem;
-  margin-bottom: ${({ bottomMargin }) => bottomMargin}rem;
 `;

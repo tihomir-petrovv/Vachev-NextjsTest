@@ -5,13 +5,35 @@ import {
   SectionMediumHeading,
 } from "~/components";
 
-export const StyledCardContainerColumn = styled(({ height, ...props }) => (
+export const StyledMainCardContainerColumn = styled(({ height, ...props }) => (
   <SectionContainerColumn {...props} />
 ))`
-  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
 `;
-
-export const StyledCardTitle = styled((props) => (
+export const StyledCardContainerColumn = styled(
+  ({ selectedBoxIndex, index, height, ...props }) => (
+    <SectionContainerColumn {...props} />
+  )
+)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 25rem;
+  height: fit-content;
+  padding: 1rem;
+  background-color: #f5f5f1;
+  border-radius: 15px;
+  cursor: pointer;
+  border: ${(props) =>
+    props.selectedBoxIndex === props.index && "2px solid red"};
+`;
+export const StyledCardTitle = styled(({selectedBoxIndex, index, ...props}) => (
   <SectionMediumHeading {...props} />
 ))`
   margin: 0;
@@ -20,6 +42,10 @@ export const StyledCardTitle = styled((props) => (
   align-self: start;
   line-height: fit-content;
   font-size: 1.2rem;
+  ${(props) =>
+    props.selectedBoxIndex === props.index
+      ? { color: "#0388fc", textDecoration: "underline" }
+      : {}};
 `;
 
 export const StyledCardDescription = styled((props) => (
@@ -38,6 +64,29 @@ export const StyledCardImageContainer = styled(({ ...props }) => (
 ))`
   width: 15rem;
   height: 100%;
+  align-self: center;
+`;
+
+export const StyledCardBoxesImageContainer = styled(({ ...props }) => (
+  <div {...props} />
+))`
+  width: 4rem;
+  height: fit-content;
+`;
+
+export const StyledMainCardOptionBox = styled(({ ...props }) => (
+  <div {...props} />
+))`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 25rem;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  max-height: fit-content;
 `;
 
 export const StyledCardOptionBox = styled(({ ...props }) => <div {...props} />)`
@@ -47,6 +96,8 @@ export const StyledCardOptionBox = styled(({ ...props }) => <div {...props} />)`
   justify-content: center;
   width: 100%;
   max-width: 25rem;
-  height: 100%;
-  padding: 1rem;
+  height: fit-content;
+  padding: 0.3rem;
+  background-color: #f5f5f1;
+  border-radius: 15px;
 `;
