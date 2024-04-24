@@ -6,8 +6,12 @@ import {
   StyledCardOptionBox,
   StyledCardContainerColumn,
 } from "./elements";
+import { useState } from "react";
 
 export const Card = ({ image, quotes }) => {
+
+    const [ selectedBoxIndex, setSelectedBoxIndex ] = useState(null);
+
     const boldPhrases = (string, phrases) => {
         let result = string;
         phrases.forEach(phrase => {
@@ -45,9 +49,14 @@ export const Card = ({ image, quotes }) => {
             padding={"1rem"}
             backgroundColor={"#f5f5f1"}
             borderRadius={"15px"}
+            cursor={"pointer"}
             key={index}
+            onClick={() => setSelectedBoxIndex(index)}
+            style={{
+              border: selectedBoxIndex === index ? "2px solid #0388fc" : "none",
+            }}
           >
-            <StyledCardTitle>{quote.title}</StyledCardTitle>
+            <StyledCardTitle style={selectedBoxIndex === index ? {color: '#0388fc', textDecoration: 'underline'} : {}}>{quote.title}</StyledCardTitle>
             <StyledCardDescription>
               {" "}
               {boldPhrases(quote.desc, [

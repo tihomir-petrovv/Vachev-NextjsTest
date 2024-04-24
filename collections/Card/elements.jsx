@@ -60,4 +60,5 @@ export const StyledCardOptionBox = styled(({ ...props }) => <div {...props} />)`
   padding: ${(props) => props.padding || "1rem"};
   background-color: ${(props) => props.backgroundColor || "white"};
   border-radius: ${(props) => props.borderRadius || "15px"};
+  cursor: ${(props) => props.cursor || "auto"};
 `;
