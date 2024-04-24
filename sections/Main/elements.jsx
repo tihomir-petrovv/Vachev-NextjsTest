@@ -10,9 +10,6 @@ export const StyledContainerColumn = styled(({ height, ...props }) => (
   <SectionContainerColumn {...props} />
 ))`
   align-items: center;
-  height: ${(props) => props.height};
-  min-height: ${(props) => props.minHeight};
-  margin-top: ${(props) => props.marginTop};
 `;
 
 export const StyledSecondTitle = styled((props) => <SectionMediumHeading {...props} />)`

@@ -1,18 +1,37 @@
-import Image from "next/image";
-import {
-  StyledContainerColumn,
-} from "./elements";
+import { StyledContainerColumn } from "./elements";
 import { StyledDescription, StyledTitle } from "../Hero/elements";
 import { Card } from "../../collections/Card/Card";
 
-export const Main = ({ title, description, image, quotes }) => {
+export const Main = ({
+  title,
+  description,
+  image,
+  quotes,
+  briefImage,
+  searchImage,
+  pitchImage,
+}) => {
   return (
-    <StyledContainerColumn height={"fit-content"} minHeight={"100vh"} marginTop={"5vh"}>
+    <StyledContainerColumn
+      style={{
+        height: "fit-content",
+        minHeight: "100vh",
+        marginTop: "5vh",
+      }}
+    >
       <StyledContainerColumn>
-        <StyledTitle lineHeight={"1rem"}>{title}</StyledTitle>
+        <StyledTitle style={{
+          lineHeight: "1rem",
+        }}>{title}</StyledTitle>
         <StyledDescription>{description}</StyledDescription>
       </StyledContainerColumn>
-      <Card image={image} quotes={quotes}/>
+      <Card
+        image = {image}
+        quotes = {quotes}
+        briefImage = {briefImage}
+        searchImage = {searchImage}
+        pitchImage = {pitchImage}
+      />
     </StyledContainerColumn>
   );
 };

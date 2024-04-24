@@ -17,6 +17,9 @@ const mainProps = {
     { title: "Search", desc: "In-depth agency search covering, criteria matching, door knocking and due-diligence vetting." },
     { title: "Pitch", desc: "Comprehensive pitch management, including comms, diary management and pitch hosting." },
   ],
+  briefImage: { src: "/img/brief.png", alt: "brief", width: 1000, height: 1680 },
+  searchImage: { src: "/img/search.png", alt: "search", width: 1000, height: 1680 },
+  pitchImage: { src: "/img/pitch.png", alt: "pitch", width: 1000, height: 1680 },
 };
 
 export default function Home() {
