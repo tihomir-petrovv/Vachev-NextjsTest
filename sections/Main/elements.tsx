@@ -6,7 +6,6 @@ import {
   SectionContainerColumn,
   SectionMediumHeading,
 } from "../../components";
-import { Styled } from "styled-components/dist/constructors/constructWithOptions";
 
 interface StyledRootContainerColumnProps {
   height?: string;

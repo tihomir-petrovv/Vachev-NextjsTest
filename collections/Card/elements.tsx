@@ -46,7 +46,7 @@ export const StyledCardContainerColumn = styled(
   border-radius: 15px;
   cursor: pointer;
   border: ${(props) =>
-    props.selectedBoxIndex === props.index && "2px solid red"};
+    props.selectedBoxIndex === props.index && "2px solid #0388fc"};
 `;
 export const StyledCardTitle = styled(({selectedBoxIndex, index, ...props}) => (
   <SectionMediumHeading {...props} />
@@ -63,7 +63,7 @@ export const StyledCardTitle = styled(({selectedBoxIndex, index, ...props}) => (
       : {}};
 `;
 
-export const StyledCardDescription = styled((props) => (
+export const StyledCardDescription = styled(({ ...props }) => (
   <SectionSubheading {...props} />
 ))`
   margin: 0.1rem 0 0;
